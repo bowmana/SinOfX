@@ -35,7 +35,7 @@ public class SINX {
 
 	}
 
-	static int fact(int x) {
+	public static int fact(int x) {
 		int i, fact = 1;
 		for (i = 1; i <= x; i++)
 			fact = fact * i;
