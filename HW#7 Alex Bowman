@@ -1,0 +1,44 @@
+
+/*Alex Bowman 
+ * HW7
+ * Professor Silvestri
+ * 11/1/19
+ * CSC-111
+ */
+
+import java.util.Scanner;
+
+public class SINX {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter the value of x of sinx : ");
+		double x = input.nextInt();
+
+		System.out.println("Enter the number of terms: ");
+		int terms = input.nextInt();
+		double sum = 0;
+		double n;
+		n = x;
+		x = x * (Math.PI / 180);
+		int i, j;
+		for (i = 1, j = 1; i <= terms; i++, j = j + 2) {
+			if (i % 2 != 0) {
+				sum = sum + Math.pow(x, j) / fact(j);
+			} else
+				sum = sum - Math.pow(x, j) / fact(j);
+		}
+
+		System.out.println("Sin of " + n + " = " + sum);
+
+	}
+
+	static int fact(int x) {
+		int i, fact = 1;
+		for (i = 1; i <= x; i++)
+			fact = fact * i;
+		return fact;
+	}
+}
